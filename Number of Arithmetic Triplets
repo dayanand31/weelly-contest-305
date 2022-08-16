@@ -1,0 +1,9 @@
+int arithmeticTriplets(vector<int>& nums, int diff) {
+    int dp[201]{};
+    int res=0;
+    for(auto i:nums){ 
+		dp[i]= i>=diff? dp[i-diff]+1 : 1;
+        if(dp[i]>=3) res++; 
+    }
+    return res;
+}
